@@ -42,7 +42,11 @@ if (!$_SESSION["user_id"]) {  //check session
                                     <thead>
                                         <tr>
                                             <th>รหัส</th>
-                                            <th>ชื่อประเภทวัสดุ</th>
+                                            <th>ชื่อวัสดุ</th>
+                                            <th>ราคาต่อหน่วย</th>
+                                            <th>ประเภทวัสดุ</th>
+                                            <th>จำนวนที่รับเข้า</th>
+                                            <th>วันที่รับเข้า</th>
 
                                         </tr>
                                     </thead>
@@ -50,67 +54,135 @@ if (!$_SESSION["user_id"]) {  //check session
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Airi Satou</td>
                                         </tr>
                                         <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr><tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                        </tr>
-                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                         </tr>
                                         <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
                                         </tr>
@@ -126,5 +198,5 @@ if (!$_SESSION["user_id"]) {  //check session
     </div>
                     <!-- main content area end -->
 
-<?php include 'components/footer.php' ?>
-<?php } ?>
+  <?php include 'components/footer.php' ?>
+  <?php } ?>

@@ -22,7 +22,7 @@ if (!$_SESSION["user_id"]) {  //check session
                         <div class="breadcrumbs-area clearfix">
                             <h4 class="page-title pull-left">แดชบอร์ด</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.php">หน้าแรก</a></li>
+                                <li><a href="dashboard_admin.php">หน้าแรก</a></li>
                                 <li><span>แดชบอร์ด</span></li>
                             </ul>
                         </div>
@@ -30,10 +30,6 @@ if (!$_SESSION["user_id"]) {  //check session
                     <?php include 'components/username.php' ?>
                 </div>
             </div>
-            <?php
-            print_r($_SESSION)
-            ?>
-            <p><a href="logout.php">Log out</strong></a></p>
             <!-- page title area end -->
             <div class="main-content-inner">
                 <div class="row">

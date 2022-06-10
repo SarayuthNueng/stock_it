@@ -17,6 +17,7 @@ session_start();
 
                       $_SESSION["user_id"] = $row["user_id"];
                       $_SESSION["username"] = $row["username"];
+                      $_SESSION["pname"] = $row["pname"];
                       $_SESSION["fname"] = $row["fname"];
                       $_SESSION["lname"] = $row["lname"];
                       $_SESSION["ulevel"] = $row["ulevel"];
@@ -36,7 +37,8 @@ session_start();
                   }else{
                     echo "<script>";
                         echo "alert(\" user หรือ  password ไม่ถูกต้อง\");"; 
-                        echo "window.history.back()";
+                        // echo "window.history.back()";
+                        echo "window.location='index.php'";
                     echo "</script>";
 
                   }

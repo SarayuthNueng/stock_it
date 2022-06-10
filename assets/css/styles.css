@@ -163,6 +163,7 @@
     padding: 15px 15px;
     letter-spacing: 0;
     font-weight: 400;
+    font-family: 'Kanit', sans-serif;
 }
 
 .metismenu li a i {
@@ -837,7 +838,7 @@ ul.breadcrumbs {
 }
 
 .header-title {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0;

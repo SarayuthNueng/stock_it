@@ -2,7 +2,7 @@
 <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.php"><h4 style="color:white; font-size: 30px;">ระบบวัสดุคงคลังIT</h4></a>
+                    <a href="dashboard.php"><h4 style="color:white; font-size: 30px;">ระบบวัสดุคงคลังIT</h4></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -12,7 +12,7 @@
                             <li class="">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>แดชบอร์ด</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.php">ดูแดชบอร์ด</a></li>
+                                    <li><a href="dashboard_admin.php">ดูแดชบอร์ด</a></li>
                                     <li><a href="graph.php">ดูรายงานกราฟ</a></li>
                                 </ul>
                             </li>

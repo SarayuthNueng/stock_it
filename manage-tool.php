@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+<?php
+
+if (!$_SESSION["user_id"]) {  //check session
+
+    Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+
+} else { ?>
 <?php include 'components/head.php' ?>
 <!-- page container area start -->
 <div class="page-container">
@@ -14,7 +22,7 @@
                     <div class="breadcrumbs-area clearfix">
                         <h4 class="page-title pull-left">จัดการวัสดุ</h4>
                         <ul class="breadcrumbs pull-left">
-                            <li><a href="index.php">หน้าแรก</a></li>
+                            <li><a href="dashboard_admin.php">หน้าแรก</a></li>
                             <li><span>จัดการวัสดุ</span></li>
                         </ul>
                     </div>
@@ -242,3 +250,5 @@
     <!-- main content area end -->
 
     <?php include 'components/footer.php' ?>
+
+    <?php } ?>
