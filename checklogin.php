@@ -9,25 +9,27 @@ session_start();
 				//query 
                   $sql="SELECT * FROM users Where username='".$username."' and password='".$password."' ";
 
-                  $result = mysqli_query($con,$sql);
+                  $result = mysqli_query($connect,$sql);
 				
                   if(mysqli_num_rows($result)==1){
 
                       $row = mysqli_fetch_array($result);
 
-                      $_SESSION["userid"] = $row["user_id"];
-                      $_SESSION["user"] = $row["firstname"]." ".$row["lastname"];
-                      $_SESSION["userlevel"] = $row["ulevel"];
+                      $_SESSION["user_id"] = $row["user_id"];
+                      $_SESSION["username"] = $row["username"];
+                      $_SESSION["fname"] = $row["fname"];
+                      $_SESSION["lname"] = $row["lname"];
+                      $_SESSION["ulevel"] = $row["ulevel"];
 
-                      if($_SESSION["userlevel"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
+                      if($_SESSION["ulevel"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
-                        Header("Location: adminpage.php");
+                        Header("Location: dashboard_admin.php");
 
                       }
 
                       if ($_SESSION["userlevel"]=="member"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: userpage.php");
+                        Header("Location: dashboard_user.php");
 
                       }
 
@@ -42,7 +44,7 @@ session_start();
         }else{
 
 
-             Header("Location: form.php"); //user & password incorrect back to login again
+             Header("Location: index.php"); //user & password incorrect back to login again
 
         }
 ?>

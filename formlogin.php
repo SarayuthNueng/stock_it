@@ -8,7 +8,7 @@
 </head>
 <body>
 
-      <form name="frmlogin"  method="post" action="testlogin.php">
+      <form name="frmlogin"  method="post" action="checklogin.php">
         <p> </p>
         <p><b> Login Form </b></p>
         <p> ชื่อผู้ใช้ :
