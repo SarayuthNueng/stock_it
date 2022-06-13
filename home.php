@@ -20,10 +20,10 @@ if (!$_SESSION["user_id"]) {  //check session
             <div class="row align-items-center">
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
-                        <h4 class="page-title pull-left">ประเภทวัสดุทั้งหมด</h4>
+                        <h4 class="page-title pull-left">รายการเบิก</h4>
                         <ul class="breadcrumbs pull-left">
-                            <li><a href="dashboard_admin.php">หน้าแรก</a></li>
-                            <li><span>ประเภทวัสดุทั้งหมด</span></li>
+                            <li><a href="home.php">หน้าหลัก</a></li>
+                            <li><span>รายการเบิก</span></li>
                         </ul>
                     </div>
                 </div>
@@ -35,18 +35,30 @@ if (!$_SESSION["user_id"]) {  //check session
             <div class="col-12 mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">ประเภทวัสดุคงคลังทั้งหมด</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h4 class="header-title">จัดการประเภทวัสดุคงคลังทั้งหมด</h4>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-2 ">
+                                        <button style="float: right;" class="mb-3 btn btn-primary"><i class="ti-plus mx-2"></i>เพิ่มประเภทวัสดุ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <div class="data-tables ">
                             <div class="table-responsive">
                                 <table id="dataTable" class=" table table table-stripped text-center" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>รหัส</th>
-                                            <th>ชื่อวัสดุ</th>
-                                            <th>ราคาต่อหน่วย</th>
-                                            <th>ประเภทวัสดุ</th>
-                                            <th>จำนวนที่รับเข้า</th>
-                                            <th>วันที่รับเข้า</th>
+                                            <th>ชื่อประเภทวัสดุ</th>
+                                            <th>แก้ไข</th>
+                                            <th>ลบ</th>
 
                                         </tr>
                                     </thead>
@@ -54,137 +66,104 @@ if (!$_SESSION["user_id"]) {  //check session
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Airi Satou</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                        </tr><tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                         <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
+                                        </tr>
+                                        <tr>
                                             <td>Airi Satou</td>
                                             <td>Accountant</td>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td><i style="color: green;" class="ti-settings"></i></td>
+                                            <td><i style="color: red;" class="ti-trash"></i></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -196,7 +175,8 @@ if (!$_SESSION["user_id"]) {  //check session
             </div>
         </div>
     </div>
-                    <!-- main content area end -->
+    <!-- main content area end -->
 
-  <?php include 'components/footer.php' ?>
-  <?php } ?>
+    <?php include 'components/footer.php' ?>
+
+    <?php } ?>

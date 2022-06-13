@@ -22,7 +22,7 @@ if (!$_SESSION["user_id"]) {  //check session
                     <div class="breadcrumbs-area clearfix">
                         <h4 class="page-title pull-left">รายงานกราฟ</h4>
                         <ul class="breadcrumbs pull-left">
-                            <li><a href="dashboard_admin.php">หน้าแรก</a></li>
+                            <li><a href="home.php">หน้าหลัก</a></li>
                             <li><span>รายงานกราฟ</span></li>
                         </ul>
                     </div>

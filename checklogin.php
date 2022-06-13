@@ -7,7 +7,7 @@ session_start();
                   $username = $_POST['username'];
                   $password = md5($_POST['password']);
 				//query 
-                  $sql="SELECT * FROM users Where username='".$username."' and password='".$password."' ";
+                  $sql="SELECT * FROM users Where username='".$username."' AND password='".$password."' ";
 
                   $result = mysqli_query($connect,$sql);
 				
@@ -24,7 +24,7 @@ session_start();
 
                       if($_SESSION["ulevel"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
-                        Header("Location: dashboard_admin.php");
+                        Header("Location: home.php");
 
                       }
 
