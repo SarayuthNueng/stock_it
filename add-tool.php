@@ -55,7 +55,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title">Server side</h4>
-                                        <form >
+                                        <form class="" novalidate="">
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
                                                     <label for="validationCustom01">First name</label>
