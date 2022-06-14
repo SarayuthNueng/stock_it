@@ -42,7 +42,7 @@ if (!$_SESSION["user_id"]) {  //check session
                             <div class="col-lg-6">
                                 <div class="row justify-content-end">
                                     <div class="col-lg-2 ">
-                                        <button style="float: right;" class="mb-3 btn btn-primary"><i class="ti-plus mx-2"></i>เพิ่มวัสดุ</button>
+                                        <a type="button" href="add-tool.php" style="float: right;" class="mb-3 btn btn-primary"><i class="ti-plus mx-2"></i>เพิ่มวัสดุ</a>
                                     </div>
                                 </div>
                             </div>

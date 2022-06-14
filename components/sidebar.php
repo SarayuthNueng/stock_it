@@ -3,7 +3,7 @@
     <div class="sidebar-header">
         <div class="logo">
             <a href="dashboard.php">
-                <h4 style="color:white; font-size: 30px;">ระบบวัสดุคงคลังIT</h4>
+                <h4 style="color:white; font-size: 30px;">ระบบวัสดุคงคลัง IT</h4>
             </a>
         </div>
     </div>
