@@ -9,7 +9,7 @@ session_start();
 				//query 
                   $sql="SELECT * FROM users Where username='".$username."' AND password='".$password."' ";
 
-                  $result = mysqli_query($connect,$sql);
+                  $result = mysqli_query($conn,$sql);
 				
                   if(mysqli_num_rows($result)==1){
 
@@ -49,4 +49,3 @@ session_start();
              Header("Location: index.php"); //user & password incorrect back to login again
 
         }
-?>
