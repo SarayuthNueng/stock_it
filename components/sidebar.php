@@ -17,6 +17,9 @@
                     <li>
                         <a href="manage-member.php" aria-expanded="true"><i class="ti-receipt"></i><span>จัดการบุคคลากร</span></a>
                     </li>
+                    <li>
+                        <a href="manage-office.php" aria-expanded="true"><i class="ti-receipt"></i><span>จัดการหน่วยงาน</span></a>
+                    </li>
                     <li class="">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>แดชบอร์ด</span></a>
                         <ul class="collapse">

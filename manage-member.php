@@ -74,7 +74,7 @@ if (!$_SESSION["user_id"]) {  //check session
 									//คิวรี่ข้อมูลมาแสดงในตาราง
 									require_once 'db/connect-db.php';
 									$sql = "SELECT * FROM users";
-				                    $result = $connect->query($sql);
+				                    $result = $conn->query($sql);
 									foreach ($result as $u) {
 									?>
                                         <tr>

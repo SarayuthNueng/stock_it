@@ -1,3 +1,9 @@
+<?php
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
+// exit;
+ ?>
 <?php 
 session_start();
         if(isset($_POST['username'])){
