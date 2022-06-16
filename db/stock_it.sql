@@ -11,7 +11,7 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 16/06/2022 10:39:33
+ Date: 16/06/2022 11:41:03
 */
 
 SET NAMES utf8mb4;
@@ -26,6 +26,10 @@ CREATE TABLE `pname`  (
   `pname_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`pname_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of pname
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for tool
@@ -43,6 +47,10 @@ CREATE TABLE `tool`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of tool
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for tool_type
 -- ----------------------------
 DROP TABLE IF EXISTS `tool_type`;
@@ -53,6 +61,10 @@ CREATE TABLE `tool_type`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of tool_type
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for type_stock
 -- ----------------------------
 DROP TABLE IF EXISTS `type_stock`;
@@ -60,7 +72,15 @@ CREATE TABLE `type_stock`  (
   `s_id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `s_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`s_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of type_stock
+-- ----------------------------
+INSERT INTO `type_stock` VALUES (000001, 'อุปกรณ์คอมพิวเตอร์');
+INSERT INTO `type_stock` VALUES (000002, 'อุปกรณ์ปริ้นเตอร์');
+INSERT INTO `type_stock` VALUES (000003, 'อุปกรณ์อินเตอร์เน็ต');
+INSERT INTO `type_stock` VALUES (000004, 'อุปกรณ์อื่นๆ');
 
 -- ----------------------------
 -- Table structure for users
@@ -80,5 +100,12 @@ CREATE TABLE `users`  (
   `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'testfname', 'testlname', '1234567891234', '0912345678', 'admin', 'ไอที', 'นวก.คอม');
+INSERT INTO `users` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', 'lnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer');
+INSERT INTO `users` VALUES (3, 'user2', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', 'lnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer');
 
 SET FOREIGN_KEY_CHECKS = 1;
