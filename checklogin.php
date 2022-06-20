@@ -24,8 +24,7 @@ session_start();
                       $_SESSION["user_id"] = $row["user_id"];
                       $_SESSION["username"] = $row["username"];
                       $_SESSION["pname"] = $row["pname"];
-                      $_SESSION["fname"] = $row["fname"];
-                      $_SESSION["lname"] = $row["lname"];
+                      $_SESSION["fullname"] = $row["fullname"];
                       $_SESSION["ulevel"] = $row["ulevel"];
 
                       if($_SESSION["ulevel"]=="admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
@@ -34,9 +33,9 @@ session_start();
 
                       }
 
-                      if ($_SESSION["userlevel"]=="member"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+                      if ($_SESSION["ulevel"]=="member"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: dashboard_user.php");
+                        Header("Location: home.php");
 
                       }
 
