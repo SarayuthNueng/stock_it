@@ -11,11 +11,68 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 16/06/2022 11:41:03
+ Date: 20/06/2022 10:41:46
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for koffice
+-- ----------------------------
+DROP TABLE IF EXISTS `koffice`;
+CREATE TABLE `koffice`  (
+  `k_id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `k_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`k_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of koffice
+-- ----------------------------
+INSERT INTO `koffice` VALUES (001, 'IT');
+INSERT INTO `koffice` VALUES (002, 'ห้องฟัน');
+INSERT INTO `koffice` VALUES (003, 'NCD');
+INSERT INTO `koffice` VALUES (004, 'ARI');
+INSERT INTO `koffice` VALUES (005, 'ห้องยา');
+INSERT INTO `koffice` VALUES (006, 'ห้องบัตร');
+INSERT INTO `koffice` VALUES (007, 'ER');
+INSERT INTO `koffice` VALUES (008, 'TB');
+INSERT INTO `koffice` VALUES (010, 'ddd');
+INSERT INTO `koffice` VALUES (012, 'aaa');
+INSERT INTO `koffice` VALUES (013, 'ss');
+INSERT INTO `koffice` VALUES (014, 'ee');
+INSERT INTO `koffice` VALUES (015, 'tt');
+INSERT INTO `koffice` VALUES (016, '66');
+INSERT INTO `koffice` VALUES (017, 'asdasd');
+INSERT INTO `koffice` VALUES (018, 'IT');
+INSERT INTO `koffice` VALUES (019, 'asasasa');
+INSERT INTO `koffice` VALUES (020, 'qqq');
+INSERT INTO `koffice` VALUES (021, 'zzz');
+INSERT INTO `koffice` VALUES (022, 'zzz2');
+INSERT INTO `koffice` VALUES (023, 'd2');
+INSERT INTO `koffice` VALUES (024, 'it2');
+INSERT INTO `koffice` VALUES (025, '1');
+INSERT INTO `koffice` VALUES (026, '2');
+INSERT INTO `koffice` VALUES (027, '3');
+INSERT INTO `koffice` VALUES (028, '4');
+INSERT INTO `koffice` VALUES (029, '5');
+INSERT INTO `koffice` VALUES (030, '6');
+INSERT INTO `koffice` VALUES (031, '7');
+INSERT INTO `koffice` VALUES (032, '8');
+INSERT INTO `koffice` VALUES (033, '9');
+INSERT INTO `koffice` VALUES (034, '10');
+INSERT INTO `koffice` VALUES (035, '12');
+INSERT INTO `koffice` VALUES (036, '13');
+INSERT INTO `koffice` VALUES (037, '14');
+INSERT INTO `koffice` VALUES (038, '15');
+INSERT INTO `koffice` VALUES (039, '16');
+INSERT INTO `koffice` VALUES (040, '17');
+INSERT INTO `koffice` VALUES (041, '18');
+INSERT INTO `koffice` VALUES (042, '19');
+INSERT INTO `koffice` VALUES (043, '21');
+INSERT INTO `koffice` VALUES (044, '20');
+INSERT INTO `koffice` VALUES (045, 'qq1');
 
 -- ----------------------------
 -- Table structure for pname
@@ -29,39 +86,6 @@ CREATE TABLE `pname`  (
 
 -- ----------------------------
 -- Records of pname
--- ----------------------------
-
--- ----------------------------
--- Table structure for tool
--- ----------------------------
-DROP TABLE IF EXISTS `tool`;
-CREATE TABLE `tool`  (
-  `tool_id` int NOT NULL,
-  `tool_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `tool_price` float NOT NULL,
-  `tool_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `tool_qty` int NOT NULL,
-  `tool_date_import` date NOT NULL,
-  `tool_time_import` time NOT NULL,
-  PRIMARY KEY (`tool_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tool
--- ----------------------------
-
--- ----------------------------
--- Table structure for tool_type
--- ----------------------------
-DROP TABLE IF EXISTS `tool_type`;
-CREATE TABLE `tool_type`  (
-  `tool_type_id` int NOT NULL,
-  `tool_type_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`tool_type_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tool_type
 -- ----------------------------
 
 -- ----------------------------
