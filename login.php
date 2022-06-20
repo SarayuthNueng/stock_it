@@ -1,3 +1,11 @@
+<?php session_start();?>
+<!-- check session -->
+<?php if (!$_SESSION) { ?> 
+<?php
+require_once 'db/connect-db.php';
+$sql = "SELECT * FROM pname";
+$kumnum = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,43 +38,45 @@
 					<input type="submit" value="เข้าสู่ระบบ" class="btn solid" />
 				</form>
 
-				<form action="#" class="sign-up-form">
+				<form action="manage-member-addsave.php" method="POST"  class="sign-up-form">
 					<h2 class="title">สมัครสมาชิก</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i>
-						<input type="text" placeholder="ชื่อผู้ใช้" required/>
+						<input type="text" placeholder="ชื่อผู้ใช้" id="username" name="username" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="รหัสผ่าน" required/>
+						<input type="password" placeholder="รหัสผ่าน"  id="password" name="password" required />
 					</div>
 
-					<select class="input-field" style="border: none; margin: 10px 0; font-size: 1.1rem; color: #acacac;" required>
-						<option selected="selected">คำนำหน้า</option>
-						<option value="1">One</option>
+					<select class="input-field" style="border: none; margin: 10px 0; font-size: 1.1rem; color: #acacac;" name="pname" id="pname" required>
+					<option value="">คำนำหน้า</option>
+						<?php foreach ($kumnum as $kum) : ?>
+							<option value="<?= $kum['pname_name']; ?>"><?= $kum['pname_name']; ?></option>
+						<?php endforeach; ?>
 					</select>
-				
+
 					<div class="input-field">
 						<i class="fas fa-user"></i>
-						<input type="text" placeholder="ชื่อ-นามสกุล" required/>
+						<input type="text" placeholder="ชื่อ-นามสกุล" id="fullname" name="fullname" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-envelope"></i>
-						<input type="cid" placeholder="เลขบัตรประชาชน" required/>
+						<input type="cid" placeholder="เลขบัตรประชาชน" id="cid" name="cid" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="เบอร์โทรศัพท์" required/>
+						<input type="text" placeholder="เบอร์โทรศัพท์" id="tel" name="tel" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="หน่วยงาน" required/>
+						<input type="text" placeholder="หน่วยงาน" id="txtoffice" name="txtoffice" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="ตำแหน่ง" required/>
+						<input type="text" placeholder="ตำแหน่ง" id="position" name="position" required />
 					</div>
-					<input type="submit" class="btn" value="สมัครสมาชิก" />
+					<input type="submit"  class="btn" value="สมัครสมาชิก" />
 				</form>
 
 			</div>
@@ -97,3 +107,8 @@
 </body>
 
 </html>
+<?php } else { ?>
+
+<?php Header("Location: home.php"); ?>
+
+<?php } ?>

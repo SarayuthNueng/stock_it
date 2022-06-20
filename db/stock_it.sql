@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : localhost_xammp_nueng
  Source Server Type    : MySQL
- Source Server Version : 100424
+ Source Server Version : 100422
  Source Host           : localhost:3306
  Source Schema         : stock_it
 
  Target Server Type    : MySQL
- Target Server Version : 100424
+ Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 20/06/2022 10:41:46
+ Date: 20/06/2022 14:50:05
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,7 @@ CREATE TABLE `koffice`  (
   `k_id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `k_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`k_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of koffice
@@ -82,11 +82,79 @@ CREATE TABLE `pname`  (
   `pname_id` int NOT NULL,
   `pname_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`pname_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pname
 -- ----------------------------
+INSERT INTO `pname` VALUES (1, 'นาย');
+INSERT INTO `pname` VALUES (2, 'นาง');
+INSERT INTO `pname` VALUES (3, 'น.ส.');
+
+-- ----------------------------
+-- Table structure for status
+-- ----------------------------
+DROP TABLE IF EXISTS `status`;
+CREATE TABLE `status`  (
+  `status_id` int NOT NULL,
+  `status_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`status_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of status
+-- ----------------------------
+INSERT INTO `status` VALUES (1, 'อนุมัติ');
+INSERT INTO `status` VALUES (2, 'รออนุมัติ');
+
+-- ----------------------------
+-- Table structure for tool
+-- ----------------------------
+DROP TABLE IF EXISTS `tool`;
+CREATE TABLE `tool`  (
+  `tool_id` int NOT NULL,
+  `tool_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `tool_price` float NOT NULL,
+  `tool_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `tool_qty` int NOT NULL,
+  `tool_date_import` date NOT NULL,
+  `tool_time_import` time NOT NULL,
+  PRIMARY KEY (`tool_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of tool
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for tool_type
+-- ----------------------------
+DROP TABLE IF EXISTS `tool_type`;
+CREATE TABLE `tool_type`  (
+  `tool_type_id` int NOT NULL,
+  `tool_type_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`tool_type_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of tool_type
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for txtoffice
+-- ----------------------------
+DROP TABLE IF EXISTS `txtoffice`;
+CREATE TABLE `txtoffice`  (
+  `txtoffice_id` int NOT NULL,
+  `txtoffice_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`txtoffice_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of txtoffice
+-- ----------------------------
+INSERT INTO `txtoffice` VALUES (1, 'IT');
+INSERT INTO `txtoffice` VALUES (2, 'ER');
 
 -- ----------------------------
 -- Table structure for type_stock
@@ -96,7 +164,7 @@ CREATE TABLE `type_stock`  (
   `s_id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `s_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`s_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of type_stock
@@ -115,21 +183,21 @@ CREATE TABLE `users`  (
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `pname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `fname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `lname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `cid` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `tel` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `ulevel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `txtoffice` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'testfname', 'testlname', '1234567891234', '0912345678', 'admin', 'ไอที', 'นวก.คอม');
-INSERT INTO `users` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', 'lnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer');
-INSERT INTO `users` VALUES (3, 'user2', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', 'lnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer');
+INSERT INTO `users` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'ศรายุทธ นวะศรี', '1400900249352', '0980877876', 'admin', 'IT', 'นักวิชาการคอมพิวเตอร์ ', 'อนุมัติ');
+INSERT INTO `users` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer', 'อนุมัติ');
+INSERT INTO `users` VALUES (3, 'user2', 'e10adc3949ba59abbe56e057f20f883e', 'นาย', 'fnameuser', '1234567891234', '0912345678', 'member', 'it', 'computer', 'อนุมัติ');
 
 SET FOREIGN_KEY_CHECKS = 1;
