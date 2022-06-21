@@ -11,7 +11,7 @@ $kumnum = $conn->query($sql);
 $sql = "SELECT * FROM status";
 $u_status = $conn->query($sql);
 
-$sql = "SELECT * FROM txtoffice";
+$sql = "SELECT * FROM koffice";
 $office = $conn->query($sql);
 
 ?>
@@ -103,7 +103,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                             <select class="custom-select" name="txtoffice" id="txtoffice">
                                                 <option selected="selected">กรุณาเลือก</option>
                                                 <?php foreach ($office as $o) : ?>
-                                                    <option value="<?= $o['txtoffice_name']; ?>"><?= $o['txtoffice_name']; ?></option>
+                                                    <option value="<?= $o['k_name']; ?>"><?= $o['k_name']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
