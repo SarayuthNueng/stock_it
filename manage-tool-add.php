@@ -6,6 +6,7 @@ $sql = "SELECT * FROM type_stock";
 $type = $conn->query($sql);
 
 ?>
+
 <?php
 
 if (!$_SESSION["user_id"]) {  //check session
@@ -47,23 +48,23 @@ if (!$_SESSION["user_id"]) {  //check session
                                     <h4 class="header-title">เพิ่มวัสดุ</h4>
                                 </div>
                             </div>
-                            <form action="add-member-addsave.php" method="POST" enctype="multipart/form-data">
+                            <form action="manage-tool-addsave.php" method="POST" enctype="multipart/form-data">
 
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <label class="col-form-label">ชื่อวัสดุ</label>
-                                        <input type="text" id="username" name="username" class="form-control" placeholder="ชื่อวัสดุ" required>
+                                        <input type="text" id="m_name" name="m_name" class="form-control" placeholder="ชื่อวัสดุ" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">ราคา</label>
-                                        <input type="text" id="password" name="password" class="form-control" placeholder="ราคา" required>
+                                        <input type="text" id="m_price" name="m_price" class="form-control" placeholder="ราคา" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">ประเภทวัสดุ</label>
-                                        <select class="custom-select" name="pname" id="pname">
+                                        <select class="custom-select" name="m_s_id" id="m_s_id">
                                             <option selected="selected">กรุณาเลือก</option>
                                             <?php foreach ($type as $ty) : ?>
-                                                <option value="<?= $ty['s_name']; ?>"><?= $ty['s_name']; ?></option>
+                                                <option value="<?= $ty['s_id']; ?>"><?= $ty['s_name']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -73,34 +74,38 @@ if (!$_SESSION["user_id"]) {  //check session
                                 <div class="row mt-3">
                                     <div class="col-lg-4">
                                         <label class="col-form-label">จำนวน</label>
-                                        <input type="text" class="form-control" aria-label="Text input with dropdown button" id="fullname" name="fullname" placeholder="จำนวน" required>
+                                        <input type="text" class="form-control" id="m_number" name="m_number" placeholder="จำนวน" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">วันที่รับเข้า</label>
-                                        <input type="date" id="tel" name="tel" class="form-control" placeholder="วันที่รับเข้า" required>
+                                        <input type="date" id="m_date" name="m_date" class="form-control" placeholder="วันที่รับเข้า" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">เวลาที่รับเข้า</label>
-                                        <input type="time" id="tel" name="tel" class="form-control" placeholder="เวลาที่รับเข้า" required>
+                                        <input type="time" id="m_time" name="m_time" class="form-control" placeholder="เวลาที่รับเข้า" required>
                                     </div>
                                 </div>
 
                                 <div class="row mt-3">
                                     <div class="col-lg-6">
                                         <label class="col-form-label">รายละเอียด</label>
-                                        <textarea class="form-control" type="text" name="address" placeholder="รายละเอียด" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                        <textarea class="form-control" type="text" name="m_detail" placeholder="รายละเอียด" id="m_detail" rows="2"></textarea>
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="col-form-label">รูปภาพ</label>
                                         <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-secondary" type="button">อัพโหลดรูปภาพ</button>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile03">
-                                                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-                                                </div>
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-outline-secondary" type="button">อัพโหลดรูปภาพ</button>
                                             </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="m_image" onchange="readURL(this)" accept="image/jpeg, image/jpg, image/png">
+                                                <label class="custom-file-label">Choose file</label>
+                                            </div>
+                                            <div id="imgControl" class="d-none">
+                                                <img id="imgUpload" class="my-3 w-50" alt="">
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -109,7 +114,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                         <button type="button" onclick="history.back(-1)" class="btn btn-secondary btn-block"><i class="fa fa-times"></i> ย้อนกลับ</button>
                                     </div>
                                     <div class="col-md-2">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-check"></i> บันทึก</button>
+                                        <button name="submit" type="submit" class="btn btn-primary btn-block"><i class="fa fa-check"></i> บันทึก</button>
                                     </div>
                                 </div>
                             </form>
@@ -124,3 +129,17 @@ if (!$_SESSION["user_id"]) {  //check session
         <?php include 'components/footer.php' ?>
 
     <?php } ?>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                document.querySelector('#imgControl').classList.replace("d-none", "d-block");
+                reader.onload = function(e) {
+                   let element = document.querySelector('#imgUpload');
+                   element.setAttribute("src", e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>

@@ -1,6 +1,17 @@
 <?php session_start(); ?>
-<?php
 
+<?php
+require_once 'db/connect-db.php';
+
+
+$sql = "SELECT m.*,s.s_name 
+FROM material m
+LEFT JOIN type_stock s on s.s_id = m.m_s_id";
+$result = mysqli_query($conn, $sql);
+
+?>
+
+<?php
 if (!$_SESSION["user_id"]) {  //check session
 
     Header("Location: index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
@@ -42,7 +53,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                 <div class="col-lg-6">
                                     <div class="row justify-content-end">
                                         <div class="col-lg-2 ">
-                                            <a type="button" href="add-tool.php" style="float: right;" class="mb-3 btn btn-primary"><i class="ti-plus mx-2"></i>เพิ่มวัสดุ</a>
+                                            <a type="button" href="manage-tool-add.php" style="float: right;" class="mb-3 btn btn-primary"><i class="ti-plus mx-2"></i>เพิ่มวัสดุ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -70,97 +81,27 @@ if (!$_SESSION["user_id"]) {  //check session
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>2008/11/28</td>
-                                                <td><i style="color: green;" class="ti-settings"></i></td>
-                                                <td><i style="color: red;" class="ti-trash"></i></td>
-                                            </tr>
+                                            <?php while ($row = mysqli_fetch_array($result)) { ?>
+                                                <tr>
+                                                    <td><?php echo $row['m_id'] ?></td>
+
+                                                    <?php if ($row['m_image'] != '') { ?>
+                                                        <td><img src="uploads/<?php echo $row['m_image'] ?>" alt="" class="img-thumbnail w-50"></td>
+                                                    <?php } else { ?>
+                                                        <td><img src="uploads/NoImage.png" alt="" class="img-thumbnail w-50"></td>
+                                                    <?php  } ?>
+
+                                                    <td><?php echo $row['m_name'] ?></td>
+                                                    <td><?php echo $row['m_detail'] ?></td>
+                                                    <td><?php echo $row['m_price'] ?></td>
+                                                    <td><?php echo $row['s_name'] ?></td>
+                                                    <td><?php echo $row['m_number'] ?></td>
+                                                    <td><?php echo $row['m_date'] ?></td>
+                                                    <td><?php echo $row['m_time'] ?></td>
+                                                    <td><a href="manage-tool-edit.php?edit=<?php echo $row['m_id'] ?>"><i style="color: green;" class="ti-settings"></i></a></td>
+                                                    <td><a href="manage-tool-del.php?del=<?php echo $row['m_id'] ?>" class="btn-del"><i style="color: red;" class="ti-trash"></i></a></td>
+                                                </tr>
+                                            <?php } ?>
 
                                         </tbody>
                                     </table>
