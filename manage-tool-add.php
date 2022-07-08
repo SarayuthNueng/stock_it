@@ -57,7 +57,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">ราคา</label>
-                                        <input type="text" id="m_price" name="m_price" class="form-control" placeholder="ราคา" required>
+                                        <input type="number" id="m_price" name="m_price" class="form-control" placeholder="ราคา" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">ประเภทวัสดุ</label>
@@ -74,7 +74,7 @@ if (!$_SESSION["user_id"]) {  //check session
                                 <div class="row mt-3">
                                     <div class="col-lg-4">
                                         <label class="col-form-label">จำนวน</label>
-                                        <input type="text" class="form-control" id="m_number" name="m_number" placeholder="จำนวน" required>
+                                        <input type="number" class="form-control" id="m_number" name="m_number" placeholder="จำนวน" required>
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="col-form-label">วันที่รับเข้า</label>
