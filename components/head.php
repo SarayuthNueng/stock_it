@@ -30,6 +30,7 @@
     <!-- sweetalert2 -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 
 <body>
