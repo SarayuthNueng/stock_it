@@ -2,7 +2,7 @@
 <?php
 include "db/connect-db.php";
 
-$sid = $_GET['edit'];
+$sid = $_GET['del'];
 
 $sql1 = "SELECT * FROM material WHERE m_id = '$sid' ";
 $query = mysqli_query($conn, $sql1);
